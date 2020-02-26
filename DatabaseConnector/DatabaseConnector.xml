@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DatabaseConnector</name>
+    </assembly>
+    <members>
+        <member name="T:DatabaseConnector.DatabaseObject">
+            <summary>
+            Class to represent a database through which the user can connect to and query from.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.DatabaseObject"/> class.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.DatabaseObject"/> class.
+            </summary>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.DatabaseObject"/> class.
+            </summary>
+            <param name="connectionString">The connection string to be used to connect to the database.</param>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.#ctor(System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.DatabaseObject"/> class.
+            </summary>
+            <param name="connectionString">The connection string to be used to connect to the database.</param>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
+        <member name="P:DatabaseConnector.DatabaseObject.Connected">
+            <summary>
+            Gets or sets a value indicating whether gets or sets the state of the database.
+            </summary>
+        </member>
+        <member name="P:DatabaseConnector.DatabaseObject.ConnectionString">
+            <summary>
+            Gets or sets the connection string to connect to the database.
+            </summary>
+        </member>
+        <member name="P:DatabaseConnector.DatabaseObject.Logger">
+            <summary>
+            Gets or sets the logger to be used by the database.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.Connect">
+            <summary>
+            Connects to the database.
+            </summary>
+            <returns><code>true</code> if the database has been successfully connected to.</returns>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.IsConnected">
+            <summary>
+            Returns whether or not a connection has been established to the database.
+            <returns><code>true</code> if the database has been connected to</returns>
+            </summary>
+            <returns><code>true</code> if the database has been connected to.</returns>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.Disconnect">
+            <summary>
+            Disconnects from the database.
+            </summary>
+            <returns><code>true</code> if the database has been successfully disconnected from.</returns>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.ExecuteQuery(System.String)">
+            <summary>
+            Executes the given query that retrieves data from the database.
+            </summary>
+            <param name="query">Query to execute.</param>
+            <returns>Data queried from the database.</returns>
+        </member>
+        <member name="M:DatabaseConnector.DatabaseObject.ExecuteNonQuery(System.String)">
+            <summary>
+            Executes the given query that does not return any data (e.g. update, insert, delete).
+            </summary>
+            <param name="nonQuery">Query to execute.</param>
+            <returns><code>true</code> if query was successfully executed.</returns>
+        </member>
+        <member name="T:DatabaseConnector.ErrorQueryingData">
+            <summary>
+            Defines the <see cref="T:DatabaseConnector.ErrorQueryingData" />.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.ErrorQueryingData.ErrorMsg">
+            <summary>
+            Defines the ErrorMsg.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.ErrorQueryingData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.ErrorQueryingData"/> class.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.ErrorQueryingData.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.ErrorQueryingData"/> class.
+            </summary>
+            <param name="message">The message<see cref="T:System.String"/>.</param>
+        </member>
+        <member name="T:DatabaseConnector.OracleDatabase">
+            <summary>
+            Class to represent an Oracle database.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabase.myConnection">
+            <summary>
+            Represents an open connection to the Oracle database.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.OracleDatabase"/> class.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.OracleDatabase"/> class.
+            </summary>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.OracleDatabase"/> class.
+            </summary>
+            <param name="connectionString">The connection string used to connnect to database.</param>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.#ctor(System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.OracleDatabase"/> class.
+            </summary>
+            <param name="connectionString">The connection string used to connnect to database.</param>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.OracleDatabase"/> class.
+            </summary>
+            <param name="host">Host name.</param>
+            <param name="port">Port number.</param>
+            <param name="serviceName">Service name.</param>
+            <param name="userID">Username for login.</param>
+            <param name="password">Password for login.</param>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.CreateCommandHelper(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates and returns the command line for executing SQL scripts.
+            </summary>
+            <param name="host">Host name.</param>
+            <param name="port">Port number.</param>
+            <param name="serviceName">Service name.</param>
+            <param name="userID">Username for login.</param>
+            <param name="password">Password for login.</param>
+            <param name="filePath">File path of SQL script.</param>
+            <returns>The command line for executing SQL scripts.</returns>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.CreateConnectionString(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates and returns the connection string.
+            </summary>
+            <param name="host">Host name.</param>
+            <param name="port">Port number.</param>
+            <param name="serviceName">Service name.</param>
+            <param name="userID">Username for login.</param>
+            <param name="password">Password for login.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.Connect">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.IsConnected">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.Disconnect">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.ExecuteQuery(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.ExecuteNonQuery(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.ExecuteSQLFromFile(System.String)">
+            <summary>
+            Executes the query from the given SQL file.
+            </summary>
+            <param name="filePath">File path of SQL script.</param>
+            <returns><code>true</code> if query was successfully executed.</returns>
+        </member>
+        <member name="M:DatabaseConnector.OracleDatabase.SkipSQLPlusCommandLineInfo(System.Int32,System.String)">
+            <summary>
+            Returns whether or not the SQL*Plus command-line info has been skipped.
+            </summary>
+            <param name="lineCount">Number of lines skipped.</param>
+            <param name="line">Line to check for skip.</param>
+            <returns><code>true</code> if the SQL*Plus command-line info has been skipped.</returns>
+        </member>
+        <member name="T:DatabaseConnector.OracleDatabaseConstants">
+            <summary>
+            Class to represent the constant for OracleDatabase.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.SQLPLusCommand">
+            <summary>
+            SQL*Plus command prefix.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.DisconnectedSQL">
+            <summary>
+            SQL message string for disconnecting.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.SQLEnterUsername">
+            <summary>
+            Oracle message prompt to enter user name.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.SQLConnectedTo">
+            <summary>
+            Oracle message string for connection.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.SQLOracle12">
+            <summary>
+            Oracle message string for database version.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.SQLLastConnectionInfo">
+            <summary>
+            Oracle message string for last connection info.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.SQLOracleInfo">
+            <summary>
+            Oracle message string for additional info.
+            </summary>
+        </member>
+        <member name="F:DatabaseConnector.OracleDatabaseConstants.SQLERROR">
+            <summary>
+            Oracle message string for error.
+            </summary>
+        </member>
+        <member name="T:DatabaseConnector.LogHelper">
+            <summary>
+            Defines the <see cref="T:DatabaseConnector.LogHelper" />.
+            </summary>
+        </member>
+        <member name="P:DatabaseConnector.LogHelper.Logger">
+            <summary>
+            Gets or sets the logger to be used.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.LogHelper.LogStdout">
+            <summary>
+            Logs a line with 4 tabs and Stdout:.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.LogHelper.LogWithFiveTabs(System.String)">
+            <summary>
+            Logs the provided 'log' with 5 tabs in front.
+            </summary>
+            <param name="log">The log<see cref="T:System.String"/>.</param>
+        </member>
+        <member name="M:DatabaseConnector.LogHelper.Tab(System.Int32)">
+            <summary>
+            Returns a sequence of whitespaces of fixed length to represent tabs in the print log.
+            </summary>
+            <param name="indents">Number of tabs.</param>
+            <returns>Sequence of tabs represented as whitespaces.</returns>
+        </member>
+    </members>
+</doc>
