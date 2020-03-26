@@ -146,6 +146,17 @@
             <param name="userID">Username for login.</param>
             <param name="password">Password for login.</param>
         </member>
+        <member name="M:DatabaseConnector.OracleDatabase.#ctor(System.String,System.String,System.String,System.String,System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.OracleDatabase"/> class.
+            </summary>
+            <param name="host">Host name.</param>
+            <param name="port">Port number.</param>
+            <param name="serviceName">Service name.</param>
+            <param name="userID">Username for login.</param>
+            <param name="password">Password for login.</param>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
         <member name="M:DatabaseConnector.OracleDatabase.CreateCommandHelper(System.String,System.String,System.String,System.String,System.String,System.String)">
             <summary>
             Creates and returns the command line for executing SQL scripts.

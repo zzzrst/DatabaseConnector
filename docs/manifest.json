@@ -1,87 +1,15 @@
 {
   "homepages": [],
-  "source_base_path": "C:/GitHubProjects/DatabaseConnector/DatabaseConnector/DatabaseConnector",
+  "source_base_path": "C:/GitHub/DatabaseConnector/DatabaseConnector",
   "xrefmap": "xrefmap.yml",
   "files": [
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DatabaseConnector.DatabaseObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DatabaseConnector.DatabaseObject.html",
-          "hash": "oW1SiIAIXY5AwpRfRmBn3A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DatabaseConnector.ErrorQueryingData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DatabaseConnector.ErrorQueryingData.html",
-          "hash": "9C8u0xqMHBvMgFVkl3YGUg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DatabaseConnector.LogHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DatabaseConnector.LogHelper.html",
-          "hash": "X49cnb3jGS3/XxwRxlO/tw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DatabaseConnector.OracleDatabase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DatabaseConnector.OracleDatabase.html",
-          "hash": "hpGLBc9gK9Mxy5l2ET175w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DatabaseConnector.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DatabaseConnector.html",
-          "hash": "Mriw8R6fT9Cc5Z3srIBWQA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
     {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "92G6jpLUoj/AHh5IuO8FvA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "zZ4cpbge13fhGeiM+PckAw=="
+          "hash": "NonL3w8pGFX0vEad7qVgfQ=="
         }
       },
       "is_incremental": false,
@@ -132,7 +60,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "XJhc0/bJZe/qaaskH93mVQ=="
+          "hash": "3HqZH7MgiNma9Y02yZGkJA=="
         }
       },
       "is_incremental": false,
@@ -155,12 +83,6 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {

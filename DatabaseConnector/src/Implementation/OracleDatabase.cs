@@ -66,9 +66,24 @@ namespace DatabaseConnector
         /// <param name="userID">Username for login.</param>
         /// <param name="password">Password for login.</param>
         public OracleDatabase(string host, string port, string serviceName, string userID, string password)
+            : this(host, port, serviceName, userID, password, null)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OracleDatabase"/> class.
+        /// </summary>
+        /// <param name="host">Host name.</param>
+        /// <param name="port">Port number.</param>
+        /// <param name="serviceName">Service name.</param>
+        /// <param name="userID">Username for login.</param>
+        /// <param name="password">Password for login.</param>
+        /// <param name="logger">The logger to be used in this library.</param>
+        public OracleDatabase(string host, string port, string serviceName, string userID, string password, ILogger logger)
         {
             this.ConnectionString = CreateConnectionString(host, port, serviceName, userID, password);
             this.Connected = false;
+            this.Logger = logger;
         }
 
         /// <summary>
