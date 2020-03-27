@@ -1,21 +1,34 @@
 using NUnit.Framework;
 using DatabaseConnector;
+using System.Collections.Generic;
 
 namespace NUnitTestDatabaseConnector
 {
     public class Tests
     {
+        private DatabaseObject dbDriver;
+
+        [SetUp]
+        public void SetUp()
+        {
+            string host = ;
+            string port = "8080";
+            string serviceName = "OracleDB";
+            string userId = ;
+            string password = ;
+            dbDriver = new OracleDatabase(host, port, serviceName, userID, password);
+        }
         /// <summary>
         /// The QueryExistingTestCaseWithOneRow.
         /// </summary>
         [Test]
         public void QueryExistingTestCaseWithOneRow()
         {
-            DatabaseDriver dbDriver = new DatabaseDriver();
             string collection = "AutomationFramework";
             string testcase = "AutomationDatabaseTestOneRow";
             string release = "1";
-            List<List<object>> table = dbDriver.QueryTestCase(testcase, collection, release);
+            string query = "SELECT T.TESTCASE, T.TESTSTEPDESCRIPTION, T.STEPNUM, T.ACTIONONOBJECT, T.OBJECT, T.VALUE, T.COMMENTS, T.RELEASE, T.LOCAL_ATTEMPTS, T.LOCAL_TIMEOUT, T.CONTROL, T.COLLECTION, T.TEST_STEP_TYPE_ID, T.GOTOSTEP FROM QA_AUTOMATION.TESTCASE T WHERE T.TESTCASE = '" + testcase + "' AND T.COLLECTION = '" + collection + "' AND T.RELEASE = '" + release + "' ORDER BY T.STEPNUM";
+            List<List<object>> table = dbDriver.ExecuteQuery(query);
             List<object> row = table[0];
             string dbtestcase = row[0]?.ToString() ?? string.Empty;   // TESTCASE
             string testStepDesc = row[1]?.ToString() ?? string.Empty;   // TESTCASEDESCRIPTION
@@ -51,11 +64,11 @@ namespace NUnitTestDatabaseConnector
         [Test]
         public void QueryExistingTestCaseWithMoreThanOneRow()
         {
-            DatabaseDriver dbDriver = new DatabaseDriver();
             string collection = "AutomationFramework";
             string testcase = "AutomationDatabaseTestMultiRow";
             string release = "1";
-            List<List<object>> table = dbDriver.QueryTestCase(testcase, collection, release);
+            string query = "SELECT T.TESTCASE, T.TESTSTEPDESCRIPTION, T.STEPNUM, T.ACTIONONOBJECT, T.OBJECT, T.VALUE, T.COMMENTS, T.RELEASE, T.LOCAL_ATTEMPTS, T.LOCAL_TIMEOUT, T.CONTROL, T.COLLECTION, T.TEST_STEP_TYPE_ID, T.GOTOSTEP FROM QA_AUTOMATION.TESTCASE T WHERE T.TESTCASE = '" + testcase + "' AND T.COLLECTION = '" + collection + "' AND T.RELEASE = '" + release + "' ORDER BY T.STEPNUM";
+            List<List<object>> table = dbDriver.ExecuteQuery(query);
             Assert.AreEqual(2, table.Count, "Count of multiple rows");
         }
 
@@ -65,11 +78,11 @@ namespace NUnitTestDatabaseConnector
         [Test]
         public void QueryNonExistingTestCase()
         {
-            DatabaseDriver dbDriver = new DatabaseDriver();
             string collection = "AutomationFramework";
             string testcase = "AutomationDatabaseNonExistingTestCase";
-            string release = "1";
-            dbDriver.QueryTestCase(testcase, collection, release);
+            string release = "1"; 
+            string query = "SELECT T.TESTCASE, T.TESTSTEPDESCRIPTION, T.STEPNUM, T.ACTIONONOBJECT, T.OBJECT, T.VALUE, T.COMMENTS, T.RELEASE, T.LOCAL_ATTEMPTS, T.LOCAL_TIMEOUT, T.CONTROL, T.COLLECTION, T.TEST_STEP_TYPE_ID, T.GOTOSTEP FROM QA_AUTOMATION.TESTCASE T WHERE T.TESTCASE = '" + testcase + "' AND T.COLLECTION = '" + collection + "' AND T.RELEASE = '" + release + "' ORDER BY T.STEPNUM";
+            dbDriver.ExecuteQuery(query);
         }
     }
 }
