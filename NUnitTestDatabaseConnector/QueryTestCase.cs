@@ -11,11 +11,11 @@ namespace NUnitTestDatabaseConnector
         [SetUp]
         public void SetUp()
         {
-            string host = ;
-            string port = "8080";
+            string host = "8080";
+            string port = "1521";
             string serviceName = "OracleDB";
-            string userId = ;
-            string password = ;
+            string userID = "ORCLPDB1";
+            string password = "auto generated";
             dbDriver = new OracleDatabase(host, port, serviceName, userID, password);
         }
         /// <summary>
