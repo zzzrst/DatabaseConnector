@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/GitHub/DatabaseConnector/DatabaseConnector",
+  "source_base_path": "C:/Users/DuongCh/Projects/DatabaseConnector/DatabaseConnector",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "NonL3w8pGFX0vEad7qVgfQ=="
+          "hash": "+SnEMu8FfsQa78QAZupNBw=="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "9hwYqCrrp2pJCL0QIlmwyg=="
+          "hash": "6s1HofEhwS3rVajeeKD7xg=="
         }
       },
       "is_incremental": true,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "apZ/f6mtq9zVdzICVfVBkg=="
+          "hash": "f3pG/7NdUYUi6RCodHDf/A=="
         }
       },
       "is_incremental": true,
