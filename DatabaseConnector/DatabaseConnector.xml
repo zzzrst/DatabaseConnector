@@ -255,6 +255,82 @@
             Oracle message string for error.
             </summary>
         </member>
+        <member name="T:DatabaseConnector.SQLDatabase">
+            <summary>
+            An implementation of the SQL Database.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.SQLDatabase"/> class.
+            </summary>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.SQLDatabase"/> class.
+            </summary>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.SQLDatabase"/> class.
+            </summary>
+            <param name="connectionString">The connection string used to connnect to database.</param>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.#ctor(System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.SQLDatabase"/> class.
+            </summary>
+            <param name="connectionString">The connection string used to connnect to database.</param>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.SQLDatabase"/> class.
+            </summary>
+            <param name="host">Host name.</param>
+            <param name="port">Port number.</param>
+            <param name="serviceName">Service name.</param>
+            <param name="userID">Username for login.</param>
+            <param name="password">Password for login.</param>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.#ctor(System.String,System.String,System.String,System.String,System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DatabaseConnector.SQLDatabase"/> class.
+            </summary>
+            <param name="host">Host name.</param>
+            <param name="port">Port number.</param>
+            <param name="serviceName">Service name.</param>
+            <param name="userID">Username for login.</param>
+            <param name="password">Password for login.</param>
+            <param name="logger">The logger to be used in this library.</param>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.CreateConnectionString(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates and returns the connection string.
+            </summary>
+            <param name="host">Host name.</param>
+            <param name="port">Port number.</param>
+            <param name="serviceName">Service name.</param>
+            <param name="userID">Username for login.</param>
+            <param name="password">Password for login.</param>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.Connect">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.Disconnect">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.ExecuteNonQuery(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.ExecuteQuery(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DatabaseConnector.SQLDatabase.IsConnected">
+            <inheritdoc/>
+        </member>
         <member name="T:DatabaseConnector.LogHelper">
             <summary>
             Defines the <see cref="T:DatabaseConnector.LogHelper" />.

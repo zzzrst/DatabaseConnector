@@ -81,21 +81,6 @@
         }
 
         /// <summary>
-        /// Creates and returns the command line for executing SQL scripts.
-        /// </summary>
-        /// <param name="host">Host name.</param>
-        /// <param name="port">Port number.</param>
-        /// <param name="serviceName">Service name.</param>
-        /// <param name="userID">Username for login.</param>
-        /// <param name="password">Password for login.</param>
-        /// <param name="filePath">File path of SQL script.</param>
-        /// <returns>The command line for executing SQL scripts.</returns>
-        public static string CreateCommandHelper(string host, string port, string serviceName, string userID, string password, string filePath)
-        {
-            return $"Data Source={host};Initial Catalog={serviceName};User ID={userID};Password={password}";
-        }
-
-        /// <summary>
         /// Creates and returns the connection string.
         /// </summary>
         /// <param name="host">Host name.</param>
@@ -107,7 +92,7 @@
         public static string CreateConnectionString(string host, string port, string serviceName, string userID, string password)
         {
             // connection string with provder of OraOLEDB that comes when user installs Oracle Client
-            return $"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={host})(PORT={port}))(CONNECT_DATA=(SERVICE_NAME={serviceName})));User ID={userID};Password={password};";
+            return $"Data Source={host};Initial Catalog={serviceName};User ID={userID};Password={password}";
         }
 
         /// <inheritdoc/>
